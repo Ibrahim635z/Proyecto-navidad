@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    gap: 20px 10%;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.cardCampo{
+    border: 1px solid black;
+    border-radius: 5%;
+    width:25%;
+    height: auto;
+    padding: 1%;
+}
+
+.cardCampo img{
+    width: 100%;
+    
+}
+
+nav{
+    display: flex;
+    gap: 5%;
+    background-color: lightgreen;
+    width: 30%;
+    margin-left: 50%;
+    padding: 1%;
+    margin-top: 10px;
+}
+
+nav p{
+    background-color: lightskyblue;
+    border-radius: 20%;
+}
