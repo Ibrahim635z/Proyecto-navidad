@@ -8,36 +8,118 @@
     display: flex;
     flex-direction: row;
     padding: 3%;
-    gap: 20px 10%;
+    gap: 80px;
     width: 100%;
     height: auto;
     flex-wrap: wrap;
+    
 }
 
 .cardCampo{
-    border: 1px solid black;
+    border: 1px solid #acacac93;
+    box-shadow: 2px 2px 2px 2px #acacac93;
     border-radius: 5%;
-    width:25%;
+    width:20%;
     height: auto;
     padding: 1%;
+    position: relative;
 }
 
 .cardCampo img{
     width: 100%;
-    
+    border-radius: 5px;
 }
 
 nav{
+    margin-top: 1%;
     display: flex;
-    gap: 5%;
-    background-color: lightgreen;
-    width: 30%;
-    margin-left: 50%;
-    padding: 1%;
-    margin-top: 10px;
+    width:85%;
+    gap: 1%;
 }
 
 nav p{
-    background-color: lightskyblue;
-    border-radius: 20%;
+    margin-left: 5%;
+    text-decoration: none;
+    color: black;
 }
+nav p:hover{
+    color: #2c8d2c;
+    font-weight: bold;
+    cursor: pointer;
+}
+nav h2{
+    margin-left: 15%;
+    margin-right: 20%;
+}
+
+.seccion1{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.seccion1 img{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seccion1 h3{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: white;
+}
+
+
+
+.btn__alquilar{
+    border-radius: 3px;
+    border: none;
+    background-color: #2c8d2c;
+    color: white;
+    padding: 2%;
+    width: 30%;
+}
+
+.btn__alquilar:hover{
+    cursor: pointer;
+}
+
+.container__perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+.div__perfil{
+    display: flex;
+    width: 50%;
+    height: 30vh;
+    border: 1px solid black;
+    padding: 2%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+.div__perfil img{
+    
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    
+}
+
+.div__perfil h2{
+    width:100%;
+    text-align: center;
+}
+
+.div__perfil p{
+    width: 60%; /* tienes que poner un div para la foto y otro para los textos y asi tenerlo todo bien*/
+}
+

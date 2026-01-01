@@ -50,6 +50,10 @@ form button{
     
 }
 
+form button:hover{
+    cursor: pointer;
+}
+
 form input{
     padding: 2%;
 }
