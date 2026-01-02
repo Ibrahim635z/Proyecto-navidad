@@ -9,7 +9,8 @@
     { "id": "7", "email": "carlos@test.com", "password": "1234", "role": "user" },
     { "id": "8", "email": "ana@test.com", "password": "1234", "role": "user" },
     { "id": "9", "email": "david@test.com", "password": "1234", "role": "user" },
-    { "id": "10", "email": "elena@test.com", "password": "1234", "role": "user" }
+    { "id": "10", "email": "elena@test.com", "password": "1234", "role": "user" },
+    { "id": "11", "email": "ibrahimchakron94@gmail.com", "password": "1234", "role": "user" }
   ],
   "campos": [
     {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./CSS/styleLogin.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <script type="module" src="./js/login.js"></script>
@@ -19,6 +20,7 @@
             <input type="text" id="email">
             <label for="">Contraseña</label>
             <input type="password" id="pass">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACKLGzZCXi8alblO"></div>
             <button id="btn">Iniciar Sesión</button>
             </form>
 

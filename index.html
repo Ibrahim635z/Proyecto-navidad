@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- TAREA: Favicon (Icono de pestaña) -->
+    <!-- Pon aquí la URL de tu imagen en 'href' -->
+    <link rel="icon" type="image/png" href="./images/imagen.png">
     <link rel="stylesheet" href="./CSS/styleIndex.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("n4cRVAaQHK4FJ4-85");
+        })();
+    </script>
 </head>
+
 <body>
     <script type="module" src="./js/main.js"></script>
-    
+
     <nav>
         <h2>Bienvenido</h2>
         <p id="inicio">Inicio</p>
         <p id="perfil">Perfil</p>
         <p id="carrito">Carrito</p>
-        <p id="campos">Campos</p>
         <p id="sobre__nosotros">Sobre nosotros</p>
-        
+        <p id="cerrar__sesion">Cerrar Sesión</p>
     </nav>
 
     <div class="seccion1" id="seccion1">
         <img src="./images/imagen.png" alt="">
         <h3>Encuentra tu Partido!</h3>
+        <div class="filtro__categoria">
+            <label for="filtro-categoria">Categoria</label>
+            <select id="filtro-categoria">
+                <option value="todos">Todos</option>
+                <option value="futbol-11">Futbol 11</option>
+                <option value="futbol-7">Futbol 7</option>
+                <option value="sala">Futbol Sala</option>
+            </select>
+        </div>
     </div>
+
+
 
     <div id="container" class="container">
     </div>
+
+    <div id="loader" style="display:none;">Cargando más campos...</div>
 </body>
+
 </html>

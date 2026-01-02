@@ -1,10 +1,27 @@
-*{
+:root {
+    /* 1. TAREA: 4 Variables CSS para facilitar cambios globales */
+    --color-principal: #2c8d2c;
+    /* Verde deportivo base */
+    --color-hover: #216921;
+    /* Verde más oscuro para hovers */
+    --color-fondo-suave: #f9f9f9;
+    /* Color de fondo para secciones claras */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Tipografía base */
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+body {
+    font-family: var(--fuente-principal);
+    /* Aplicamos variable de fuente */
+}
+
+.container {
     display: flex;
     flex-direction: row;
     padding: 3%;
@@ -12,114 +29,640 @@
     width: 100%;
     height: auto;
     flex-wrap: wrap;
-    
+
 }
 
-.cardCampo{
+.cardCampo {
     border: 1px solid #acacac93;
     box-shadow: 2px 2px 2px 2px #acacac93;
     border-radius: 5%;
-    width:20%;
+    width: 20%;
     height: auto;
     padding: 1%;
     position: relative;
+    transition: all 0.5s ease;
+
 }
 
-.cardCampo img{
+.cardCampo:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px 1px #ffffff inset;
+    background-color: #2c8d2cc9;
+    color: white;
+
+    .btn__alquilar,
+    .btn__detalles {
+        background-color: white;
+        color: #2c8d2c;
+    }
+
+}
+
+.cardCampo img {
     width: 100%;
     border-radius: 5px;
 }
 
-nav{
+/* NAV */
+nav {
     margin-top: 1%;
     display: flex;
-    width:85%;
+    width: 90%;
     gap: 1%;
+
 }
 
-nav p{
+nav p {
     margin-left: 5%;
     text-decoration: none;
     color: black;
 }
-nav p:hover{
+
+nav p:hover {
     color: #2c8d2c;
     font-weight: bold;
     cursor: pointer;
 }
-nav h2{
+
+nav h2 {
     margin-left: 15%;
     margin-right: 20%;
 }
 
-.seccion1{
+/* SECCION 1 */
+.seccion1 {
     position: relative;
     width: 100%;
     height: 60vh;
 }
 
-.seccion1 img{
+.seccion1 img {
     margin-top: 10px;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: fadeInHero 1.5s ease-out;
 }
 
-.seccion1 h3{
+.seccion1 h3 {
     position: absolute;
     top: 100px;
     left: 100px;
     color: white;
 }
 
+/* filtro__categoria en Sección 1 */
+.filtro__categoria {
+    position: absolute;
+    bottom: 200px;
+    left: 15%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.493);
+    backdrop-filter: blur(5px);
+    padding: 5px 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    max-width: 90%;
+}
 
+.filtro__categoria label {
+    font-weight: 600;
+    color: #2c8d2c;
+    font-size: 1.1em;
+}
 
-.btn__alquilar{
+.filtro__categoria select {
+    padding: 8px 15px;
+    border: 2px solid #2c8d2c;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.filtro__categoria select:hover {
+    background-color: #2c8d2c;
+    color: white;
+}
+
+/* BOTON ALQUILAR */
+
+.btn__alquilar,
+.btn__detalles {
     border-radius: 3px;
     border: none;
     background-color: #2c8d2c;
     color: white;
     padding: 2%;
     width: 30%;
+    margin-top: 2%;
+    margin-left: 2%;
 }
 
-.btn__alquilar:hover{
+.btn__alquilar:hover,
+.btn__detalles:hover {
     cursor: pointer;
 }
 
-.container__perfil{
+/* PERFIL DE USUARIO*/
+
+.container__perfil {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    width: 100%;
+    min-height: 80vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.div__perfil{
+
+.div__perfil {
     display: flex;
-    width: 50%;
-    height: 30vh;
-    border: 1px solid black;
-    padding: 2%;
-    height: auto;
-    flex-wrap: wrap;
     flex-direction: row;
-    
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
 }
 
-.div__perfil img{
-    
-    width: 40%;
-    height: auto;
+.div__perfil:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #2c8d2c;
+
+}
+
+/* Imagen del Deportista (Izquierda) */
+.div__perfil img {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    /* Cuadrada con bordes suaves estilo carnet */
     object-fit: cover;
-    
+    border: 3px solid #2c8d2c;
+    /* Verde como el resto de tu web */
+    flex-shrink: 0;
+    /* Evita que la imagen se aplaste */
 }
 
-.div__perfil h2{
-    width:100%;
+/* Contenedor de información (Derecha) */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.div__perfil h2 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2c8d2c;
+    /* Línea verde */
+    padding-bottom: 5px;
+    text-align: left;
+    /* Alineado a la izquierda */
+}
+
+.div__perfil p {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #444;
+    text-align: left;
+    background: #f4fcf4;
+    /* Fondo verde muy sutil */
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.div__perfil p strong {
+    color: #2c8d2c;
+    /* Texto resaltado en verde */
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* AJUSTE PARA MÓVILES (Si la pantalla es pequeña, se vuelve vertical) */
+@media (max-width: 600px) {
+    .div__perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .div__perfil h2,
+    .div__perfil p {
+        text-align: center;
+    }
+}
+
+/*  Carrito */
+
+.container__carrito {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 400px;
+}
+
+.container__carrito h2 {
     text-align: center;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2c8d2c;
+    margin-bottom: 30px;
 }
 
-.div__perfil p{
-    width: 60%; /* tienes que poner un div para la foto y otro para los textos y asi tenerlo todo bien*/
+/* ESTILO PARA LOS PRODUCTOS DENTRO DEL CARRITO */
+
+.carrito__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
 }
 
+.carrito__item:hover {
+    background-color: #f9f9f9;
+}
+
+/* DETALLES DE PRECIO Y CANTIDAD */
+.carrito__item-nombre {
+    font-weight: bold;
+    color: #333;
+    flex: 2;
+}
+
+.carrito__item-precio {
+    color: #2c8d2c;
+    font-weight: bold;
+    flex: 1;
+    text-align: right;
+}
+
+/* BOTONES DENTRO DEL CARRITO (Eliminar, etc.) */
+.btn__eliminar {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn__eliminar:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+/* BOTONES SUMAR Y RESTAR */
+.btn__sumar,
+.btn__restar {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn__sumar {
+    background-color: #2c8d2c;
+}
+
+.btn__sumar:hover {
+    background-color: #216921;
+}
+
+.btn__restar {
+    background-color: #777;
+}
+
+.btn__restar:hover {
+    background-color: #555;
+}
+
+/* BOTÓN VACIAR CARRITO */
+.btn__vaciar {
+    background-color: #ff9800;
+    /* Naranja para diferenciar de eliminar(rojo) y finalizar(verde) */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn__vaciar:hover {
+    background-color: #e68900;
+    transform: scale(1.02);
+}
+
+/* SECCIÓN TOTALES */
+.carrito__total {
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: right;
+    border-top: 2px solid #2c8d2c;
+}
+
+.carrito__total h3 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+/* BOTÓN FINALIZAR COMPRA */
+.btn__finalizar {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px 0 0 auto;
+    background-color: #2c8d2c;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn__finalizar:hover {
+    background-color: #216921;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(44, 141, 44, 0.4);
+}
+
+/* MENSAJE DE CARRITO VACÍO */
+.carrito-vacio {
+    text-align: center;
+    padding: 50px;
+    color: #888;
+    font-style: italic;
+}
+
+/* 2. TAREA: Grid Irregular para la Galería (Sobre Nosotros) */
+.galeria__imagenes {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    /* Grid irregular: definimos 4 columnas flexibles y filas automáticas */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
+}
+
+.galeria__imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    /* Animación suave al pasar el ratón */
+}
+
+/* Hacemos que algunas imágenes ocupen más espacio para crear la irregularidad */
+.galeria__imagenes img:nth-child(1) {
+    grid-column: span 2;
+    /* Ocupa 2 columnas */
+    grid-row: span 2;
+    /* Ocupa 2 filas (la imagen destacada) */
+    animation: fadeIn 1.5s ease;
+    /* 3. TAREA: Animación 1 - Aparición suave */
+}
+
+.galeria__imagenes img:nth-child(2) {
+    grid-column: span 1;
+}
+
+.galeria__imagenes img:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 2;
+    /* Imagen vertical alta */
+}
+
+.galeria__imagenes img:hover {
+    transform: scale(1.05);
+    /* Efecto zoom al hover */
+    z-index: 1;
+}
+
+
+/* 3. TAREA: Nuevas Animaciones Simples */
+
+/* Animación 1: Fade In (Usada en primera imagen) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación 2: Slide In desde la izquierda (Aplicada al título h1 o nav) */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+nav h2 {
+    animation: slideInLeft 1s ease-out;
+    /* Se mueve al cargar */
+}
+
+/* Animación 3: Latido (Pulse) para llamar la atención (Botón Finalizar) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn__finalizar {
+    animation: pulse 2s infinite;
+    /* Late infinitamente */
+}
+
+
+/* 4. TAREA: Responsive Design (Media Queries al final del CSS) */
+
+/* TABLET (Hasta 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        justify-content: center;
+        /* Centramos las cards */
+    }
+
+    .cardCampo {
+        width: 45%;
+        /* En tablet caben 2 por fila aprox */
+    }
+
+    nav {
+        flex-wrap: wrap;
+        /* Permitimos que el menu baje si no cabe */
+        justify-content: center;
+    }
+
+    nav h2 {
+        margin: 0 20px;
+    }
+}
+
+/* MOVIL (Hasta 576px) */
+@media (max-width: 576px) {
+
+    /* Ajustes generales móvil */
+    nav {
+        flex-direction: column;
+        /* Menu vertical */
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav p {
+        margin: 0;
+        padding: 10px;
+        background-color: var(--color-fondo-suave);
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Cards ocupan todo el ancho */
+    .cardCampo {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Galería se pone en una sola columna o dos */
+    .galeria__imagenes {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: 150px;
+    }
+
+    /* Reset de irregularidad compleja para móvil */
+    .galeria__imagenes img:nth-child(n) {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    /* Filtros apilados */
+    .filtros {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .seccion1 h3 {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    .seccion1 {
+        height: auto;
+    }
+}
+
+/* 5. TAREA: Refinamiento (Card independiente, Animaciones Nav y Hero, Filtros) */
+
+/* 5.1 Card independiente: Alineamos al inicio para que si una crece, no estire a las de al lado */
+.container {
+    align-items: flex-start;
+    /* Clave para que el "Detalles" no estire a los vecinos de fila */
+}
+
+/* 5.2 Animación Nav desde la derecha */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+nav p {
+    animation: slideInRight 1s ease-out;
+    /* Animación de entrada */
+    position: relative;
+}
+
+/* 5.3 Animación Hero Image (Sección 1) */
+@keyframes fadeInHero {
+    from {
+        opacity: 0.1;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Ajuste móvil para que no se salga */
+@media (max-width: 576px) {
+    .filtro__categoria {
+        width: 95%;
+        flex-direction: column;
+        padding: 15px;
+        bottom: 10px;
+        border-radius: 15px;
+    }
+}
